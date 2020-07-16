@@ -10,7 +10,7 @@ import utility.ConnectionManager;
 
 public class UserDAO implements UserDaoInterface {
 
-	public int signUp(User user) {
+	public int signUp(User user) throws Exception {
 		String INSERT_USERS_SQL = "INSERT INTO USERS(email, password)VALUES(?,?)";
 
 		int result = 0;
@@ -30,7 +30,7 @@ public class UserDAO implements UserDaoInterface {
 		return result;
 	}
 	
-	public boolean loginUser(User user) {
+	public boolean loginUser(User user) throws Throwable {
 		boolean status = false;
 		try{
 			Connection connection = ConnectionManager.getConnection();
